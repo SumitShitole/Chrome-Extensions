@@ -1,9 +1,6 @@
 
-
 function TriggerTimer() {
     StartCountDownTimeer(localStorage.getItem("ssEnteredDate"));
-    //StartCountDownTimeer($('#dateholder').attr("data-date") + ' ' + $('#dateholder').attr("data-time"));
-    //  ShowCountDown($(targetEl), $(targetEl).siblings('.datedata').attr("data-date"));
 }
 
 $(document).ready(function () {
@@ -19,6 +16,14 @@ $(document).ready(function () {
         TriggerTimer();
     }
 });
+
+function loadScript(scriptUrl) {
+    const darkStyles = document.createElement('link');
+    darkStyles.rel = 'stylesheet';
+    darkStyles.type = 'text/css';
+    darkStyles.href = scriptUrl;
+    document.head.appendChild(darkStyles);
+}
 
 function SetValues() {
     if (document.getElementById("MyDateTitle").value == "") {
@@ -41,6 +46,7 @@ function SetValues() {
         let ssEnteredDate = month + '/' + dt + '/' + year + ' ' + isoDateValue.substr(isoDateValue.length - 8);
         localStorage.setItem("ssEnteredMyDateTitle", document.getElementById("MyDateTitle").value);
         localStorage.setItem("ssEnteredDate", ssEnteredDate);
+        localStorage.setItem("ssSentNotification", "0");
         location.reload(true);
     }
 }
@@ -48,6 +54,7 @@ function SetValues() {
 function ClearValues() {
     localStorage.removeItem("ssEnteredMyDateTitle");
     localStorage.removeItem("ssEnteredDate");
+    localStorage.setItem("ssSentNotification", "0");
     location.reload(true);
 }
 
@@ -131,5 +138,17 @@ function CountBack(secs) {
     else {
         //happened in the past
         $('#endphrase').html('in the past');
+        if (localStorage.getItem("ssSentNotification") != "1") {
+            chrome.runtime.sendMessage('', {
+                type: 'notification',
+                options: {
+                    title: 'CountDown Timer',
+                    message: 'Your count down for ' + localStorage.getItem("ssEnteredMyDateTitle") + ' is completed now.',
+                    iconUrl: '/icon.png',
+                    type: 'basic'
+                }
+            });
+            localStorage.setItem("ssSentNotification", "1");
+        }
     }
 }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script type="text/javascript" src="js/jquery.min.js"> </script>
+  <script type="text/javascript" src="js/countdown.js"> </script>
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <title> Date Time CountDown Timer By SumitS </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="container center-form">
+    <div id="main">
+      <h2 id="dateholder" class="title datedata" data-date="10/31/2019" data-time="00:00:00">
+        Mydate
+      </h2>
+      <p id="dateDisplayer">
+        Thursday, May 14, 2020 12:00 AM</p>
+      <div class="count well" id="count">
+        <table class="countdown">
+          <tbody>
+            <tr>
+              <td class="cdday" width="25%" nowrap=""></td>
+              <td class="cdday">:</td>
+              <td width="25%"></td>
+              <td>:</td>
+              <td width="25%"></td>
+              <td>:</td>
+              <td width="25%"></td>
+            </tr>
+            <tr class="dayLabels">
+              <td class="cdday">Days</td>
+              <td class="cdday"></td>
+              <td>Hours</td>
+              <td></td>
+              <td>Minutes</td>
+              <td></td>
+              <td>Seconds</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="endphrase" id="endphrase">
+
+      </p>
+      <button type="submit" id="btnClearReset" class="btn btn-primary">Reset CountDown</button>
+    </div>
+
+    <form id="home">
+      <div class="form-group">
+        <label for="MyDateTitle">Title</label>
+        <input type="text" class="form-control" id="MyDateTitle" placeholder="Enter value for Title">
+      </div>
+      <div class="form-group">
+        <label for="Txtdatetime">Enter a date with time</label>
+        <input type="datetime-local" id="Txtdatetime" name="Txtdatetime" required>
+      </div>
+      <div class="form-group">
+        <button type="submit" id="btnSubmit" class="btn btn-primary">Start CountDown</button>
+      </div>
+    </form>    
+  </div>
+
+    <div class="footer" id="footer">
+      <span>contact developer- </span>
+      <a href="https://linkedin.com/in/sumit-shitole/" target="_blank" class="fa fa-linkedin"></a>
+      <a href="https://stackoverflow.com/users/3275517/sumit-shitole" target="_blank" class="fa fa-stack-overflow"></a>
+    </div>
+</body>
+
+</html>
