@@ -27,11 +27,11 @@ function loadScript(scriptUrl) {
 
 function SetValues() {
     if (document.getElementById("MyDateTitle").value == "") {
-        alert("Please enter title for your countdown.");
+        //alert("Please enter title for your countdown.");
         document.getElementById("MyDateTitle").focus();
     }
     else if (document.getElementById("Txtdatetime").value == "") {
-        alert("Please enter complete date and time.");
+        //alert("Please enter complete date and time.");
         document.getElementById("Txtdatetime").focus();
     }
     else {
@@ -67,6 +67,7 @@ function GetMonthName(date) {
     var monthNumber = new Date(date).getMonth();
     return isNaN(monthNumber) ? null : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][monthNumber];
 }
+
 function displayDateInFormat(date) {
     var date = new Date(date);
     var month = date.toLocaleString('en-IN', { month: 'long' });
@@ -133,7 +134,7 @@ function CountBack(secs) {
     setTimeout(function () { CountBack(thoseSecs); }, 990);
     if (secs > 0) {
         //still counting down
-        $('#endphrase').html('time remaining');
+        $('#endphrase').html('remaining');
     }
     else {
         //happened in the past

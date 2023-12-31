@@ -11,15 +11,15 @@
 </head>
 
 <body>
-  <div class="container center-form">
+  <div class="container">
     <div id="main">
-      <h2 id="dateholder" class="title datedata" data-date="10/31/2019" data-time="00:00:00">
+      <div id="dateholder" class="title datedata" data-date="10/31/2019" data-time="00:00:00">
         Mydate
-      </h2>
+      </div>
       <p id="dateDisplayer">
         Thursday, May 14, 2020 12:00 AM</p>
-      <div class="count well" id="count">
-        <table class="countdown">
+      <div class="count" id="count">
+        <table class="countdownTable">
           <tbody>
             <tr>
               <td class="cdday" width="25%" nowrap=""></td>
@@ -45,29 +45,32 @@
       <p class="endphrase" id="endphrase">
 
       </p>
-      <button type="submit" id="btnClearReset" class="btn btn-primary">Reset CountDown</button>
+      <button type="submit" id="btnClearReset" class="btn btn-primary">Reset Timer</button>
     </div>
 
     <form id="home">
       <div class="form-group">
         <label for="MyDateTitle">Title</label>
-        <input type="text" class="form-control" id="MyDateTitle" placeholder="Enter value for Title">
+        <input type="text" class="form-control" id="MyDateTitle" placeholder="Enter value for Title" autocomplete="off"
+          required>
       </div>
       <div class="form-group">
         <label for="Txtdatetime">Enter a date with time</label>
-        <input type="datetime-local" id="Txtdatetime" name="Txtdatetime" required>
+        <input type="datetime-local" class="form-control" id="Txtdatetime" required>
       </div>
       <div class="form-group">
-        <button type="submit" id="btnSubmit" class="btn btn-primary">Start CountDown</button>
+        <button type="submit" id="btnSubmit" class="btn btn-primary">Start Timer</button>
       </div>
-    </form>    
-  </div>
+    </form>
+
 
     <div class="footer" id="footer">
-      <span>contact developer- </span>
+      <span>Contact Us:</span>
       <a href="https://linkedin.com/in/sumit-shitole/" target="_blank" class="fa fa-linkedin"></a>
+      <a href="https://github.com/SumitShitole" target="_blank" class="fa fa-github"></a>
       <a href="https://stackoverflow.com/users/3275517/sumit-shitole" target="_blank" class="fa fa-stack-overflow"></a>
     </div>
+  </div>
 </body>
 
 </html>
