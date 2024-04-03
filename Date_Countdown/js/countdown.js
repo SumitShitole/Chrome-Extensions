@@ -27,11 +27,9 @@ function loadScript(scriptUrl) {
 
 function SetValues() {
     if (document.getElementById("MyDateTitle").value == "") {
-        //alert("Please enter title for your countdown.");
         document.getElementById("MyDateTitle").focus();
     }
     else if (document.getElementById("Txtdatetime").value == "") {
-        //alert("Please enter complete date and time.");
         document.getElementById("Txtdatetime").focus();
     }
     else {
