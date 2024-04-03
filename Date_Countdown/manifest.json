@@ -6,8 +6,7 @@
   "icons": {
     "16": "Icon.png",
     "32": "Icon-32.png"
-  },
-  
+  },  
   "action": {
     "default_popup": "Counter.html",
     "default_icon": "Icon.png"
@@ -20,3 +19,4 @@
     "service_worker": "js/background.js"
   }
 }
+asd
